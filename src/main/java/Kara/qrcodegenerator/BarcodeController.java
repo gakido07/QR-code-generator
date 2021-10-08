@@ -6,9 +6,7 @@ import Kara.qrcodegenerator.QrCodeGenerator.QrCodeGenerator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -25,8 +23,9 @@ public class BarcodeController {
 
 
 
-    @GetMapping(value = "/newQrCode/{barcode}", produces = MediaType.IMAGE_PNG_VALUE)
-    public BufferedImage createQrCode(@PathVariable String barcode) throws Exception{
+    @GetMapping(value = "/newQrCode", produces = MediaType.IMAGE_PNG_VALUE)
+    @CrossOrigin(origins = "http://localhost:3000")
+    public BufferedImage createQrCode(@RequestParam String barcode) throws Exception{
 
         return qrCodeGenerator.generateQRCodeImage(barcode);
     }
