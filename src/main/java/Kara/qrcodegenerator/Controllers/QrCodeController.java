@@ -9,6 +9,7 @@ import java.awt.image.BufferedImage;
 
 @RestController
 @RequestMapping("/qr")
+@CrossOrigin(origins = "https://qr-code-generator.netlify.app")
 public class QrCodeController {
 
     @Autowired
