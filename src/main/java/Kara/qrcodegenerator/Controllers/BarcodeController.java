@@ -9,7 +9,6 @@ import java.awt.image.BufferedImage;
 
 @RestController
 @RequestMapping("/barcode")
-@CrossOrigin(origins = "http://localhost:3000")
 public class BarcodeController {
 
     @Autowired

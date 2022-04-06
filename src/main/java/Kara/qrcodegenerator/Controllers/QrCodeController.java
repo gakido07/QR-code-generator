@@ -9,7 +9,6 @@ import java.awt.image.BufferedImage;
 
 @RestController
 @RequestMapping("/qr")
-@CrossOrigin(origins = "http://localhost:3000")
 public class QrCodeController {
 
     @Autowired
